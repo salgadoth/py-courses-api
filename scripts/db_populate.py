@@ -1,7 +1,8 @@
+import os
 import pymongo
 import json
 
-client = pymongo.MongoClient("mongodb+srv://db_consumer:L357UcuLGFnEba8v@cluster0.y5d0bmy.mongodb.net/pyDb?retryWrites=true&w=majority&appName=Cluster0")
+client = pymongo.MongoClient(os.getenv('MONGO_CONN_URL'))
 db = client["pyDb"]
 collection = db["courses"]
 
